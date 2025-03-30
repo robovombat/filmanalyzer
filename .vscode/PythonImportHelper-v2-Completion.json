@@ -1,0 +1,46 @@
+[
+    {
+        "label": "curses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "curses",
+        "description": "curses",
+        "detail": "curses",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "TuiController",
+        "importPath": "tui.controller",
+        "description": "tui.controller",
+        "isExtraImport": true,
+        "detail": "tui.controller",
+        "documentation": {}
+    },
+    {
+        "label": "TuiController",
+        "kind": 6,
+        "importPath": "tui.controller",
+        "description": "tui.controller",
+        "peekOfCode": "class TuiController:\n    \"\"\"\n    Main TUI Controller handles:\n    - Key input\n    - Tab rendering\n    - App lifecycle\n    \"\"\"\n    def __init__(self, stdscr):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]",
+        "detail": "tui.controller",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main(stdscr):\n    controller = TuiController(stdscr)\n    controller.run()\nif __name__ == \"__main__\":\n    curses.wrapper(main)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
