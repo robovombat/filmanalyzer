@@ -31,7 +31,7 @@ class TuiController:
         curses.curs_set(0)
         self.stdscr.nodelay(False)
         self.stdscr.keypad(True)
-        self.init_colors()
+        # self.init_colors()
 
 def init_colors(self):
     if not curses.has_colors():
