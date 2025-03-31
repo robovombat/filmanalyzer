@@ -1,28 +1,32 @@
-
-# [MODIFIED STEP: Step 2c - Rich-Curses Hybrid | 2025-03-31]
+# [MODIFIED STEP: Step 2d - Shell Test Trigger (No __init__) | 2025-03-31 17:54]
 # CHANGES:
-# - App boot with config + TUI startup
-# - Logs config mode
-import sys
-try:
-    import curses
-except ImportError:
-    if sys.platform == "win32":
-        import curses
-    else:
-        raise
+# - Replaced runpy with direct file execution via open/exec
+# - Avoided need for tests/__init__.py
+# - CLI trigger: python main.py test-shell
 
-from tui.controller import TuiController
+import sys
+import curses
 from log.logger import log
 from settings.loader import load_config
 
+# 🎮 Main curses interface
 def main(stdscr):
+    from tui.controller import TuiController
     config = load_config()
-    log.info("[SETTINGS] Loaded from config/config.yaml")
     log.info(f"[SETTINGS] input_mode = {config.get('terminal_input_mode')}")
     controller = TuiController(stdscr, config)
     controller.run()
-    log.info("✅ App Exited Successfully")
 
+# 🧪 Simple test file executor (manual, safe fallback)
+def run_command_shell_test():
+    print("🔧 Running Command Shell Test...\n")
+    with open("tests/test_shell.py", "r", encoding="utf-8") as f:
+        code = f.read()
+        exec(code, {"__name__": "__main__"})
+
+# 🧭 Entry point switcher
 if __name__ == "__main__":
-    curses.wrapper(main)
+    if len(sys.argv) > 1 and sys.argv[1] == "test-shell":
+        run_command_shell_test()
+    else:
+        curses.wrapper(main)

@@ -43,6 +43,55 @@
         "documentation": {}
     },
     {
+        "label": "curses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "curses",
+        "description": "curses",
+        "detail": "curses",
+        "documentation": {}
+    },
+    {
+        "label": "partial",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -100,12 +149,11 @@
         "documentation": {}
     },
     {
-        "label": "curses",
-        "kind": 6,
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
         "isExtraImport": true,
-        "importPath": "curses",
-        "description": "curses",
-        "detail": "curses",
+        "detail": "shell.command_shell",
         "documentation": {}
     },
     {
@@ -122,14 +170,6 @@
         "description": "settings.loader",
         "isExtraImport": true,
         "detail": "settings.loader",
-        "documentation": {}
-    },
-    {
-        "label": "TuiController",
-        "importPath": "tui.controller",
-        "description": "tui.controller",
-        "isExtraImport": true,
-        "detail": "tui.controller",
         "documentation": {}
     },
     {
@@ -250,6 +290,15 @@
         "documentation": {}
     },
     {
+        "label": "CommandShell",
+        "kind": 6,
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "peekOfCode": "class CommandShell:\n    \"\"\"🔧 Terminal command interface with history and module integration\"\"\"\n    def __init__(self, modules: Dict[str, object]):\n        # █ History\n        self.history: List[str] = []\n        self.history_index: int = -1\n        self.current_input: List[str] = []\n        # █ Injected modules\n        self.modules = modules\n        # █ Command definitions",
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
         "label": "test_logging_system",
         "kind": 2,
         "importPath": "tests.test_logger",
@@ -265,6 +314,42 @@
         "description": "tests.test_log_viewer",
         "peekOfCode": "def test_log_reading():\n    path = \"logs/app.log\"\n    if not os.path.exists(path):\n        print(\"[WARN] Log file doesn't exist.\")\n        return\n    lines = read_last_lines(path, 5)\n    print(\"Last 5 log lines:\")\n    for line in lines:\n        print(\"  \" + line.strip())\nif __name__ == \"__main__\":",
         "detail": "tests.test_log_viewer",
+        "documentation": {}
+    },
+    {
+        "label": "MockImporter",
+        "kind": 6,
+        "importPath": "tests.test_shell",
+        "description": "tests.test_shell",
+        "peekOfCode": "class MockImporter:\n    def load_media(self, file_path):\n        return f\"✔ Loaded {file_path}\"\nclass MockAnalyzer:\n    def start_analysis(self):\n        return \"✔ Analysis started\"\n    def pause_analysis(self):\n        return \"✔ Analysis paused\"\nclass MockSettings:\n    def set(self, key, value):",
+        "detail": "tests.test_shell",
+        "documentation": {}
+    },
+    {
+        "label": "MockAnalyzer",
+        "kind": 6,
+        "importPath": "tests.test_shell",
+        "description": "tests.test_shell",
+        "peekOfCode": "class MockAnalyzer:\n    def start_analysis(self):\n        return \"✔ Analysis started\"\n    def pause_analysis(self):\n        return \"✔ Analysis paused\"\nclass MockSettings:\n    def set(self, key, value):\n        return f\"Set {key} = {value}\"\ndef run_test():\n    shell = CommandShell({",
+        "detail": "tests.test_shell",
+        "documentation": {}
+    },
+    {
+        "label": "MockSettings",
+        "kind": 6,
+        "importPath": "tests.test_shell",
+        "description": "tests.test_shell",
+        "peekOfCode": "class MockSettings:\n    def set(self, key, value):\n        return f\"Set {key} = {value}\"\ndef run_test():\n    shell = CommandShell({\n        'importer': MockImporter(),\n        'analyzer': MockAnalyzer(),\n        'settings': MockSettings(),\n    })\n    # Simulate user commands",
+        "detail": "tests.test_shell",
+        "documentation": {}
+    },
+    {
+        "label": "run_test",
+        "kind": 2,
+        "importPath": "tests.test_shell",
+        "description": "tests.test_shell",
+        "peekOfCode": "def run_test():\n    shell = CommandShell({\n        'importer': MockImporter(),\n        'analyzer': MockAnalyzer(),\n        'settings': MockSettings(),\n    })\n    # Simulate user commands\n    commands = [\n        \"help\",\n        \"load film.mp4\",",
+        "detail": "tests.test_shell",
         "documentation": {}
     },
     {
@@ -290,7 +375,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main(stdscr):\n    config = load_config()\n    log.info(\"[SETTINGS] Loaded from config/config.yaml\")\n    log.info(f\"[SETTINGS] input_mode = {config.get('terminal_input_mode')}\")\n    controller = TuiController(stdscr, config)\n    controller.run()\n    log.info(\"✅ App Exited Successfully\")\nif __name__ == \"__main__\":\n    curses.wrapper(main)",
+        "peekOfCode": "def main(stdscr):\n    from tui.controller import TuiController\n    config = load_config()\n    log.info(f\"[SETTINGS] input_mode = {config.get('terminal_input_mode')}\")\n    controller = TuiController(stdscr, config)\n    controller.run()\n# 🧪 Simple test file executor (manual, safe fallback)\ndef run_command_shell_test():\n    print(\"🔧 Running Command Shell Test...\\n\")\n    with open(\"tests/test_shell.py\", \"r\", encoding=\"utf-8\") as f:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "run_command_shell_test",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def run_command_shell_test():\n    print(\"🔧 Running Command Shell Test...\\n\")\n    with open(\"tests/test_shell.py\", \"r\", encoding=\"utf-8\") as f:\n        code = f.read()\n        exec(code, {\"__name__\": \"__main__\"})\n# 🧭 Entry point switcher\nif __name__ == \"__main__\":\n    if len(sys.argv) > 1 and sys.argv[1] == \"test-shell\":\n        run_command_shell_test()\n    else:",
         "detail": "main",
         "documentation": {}
     }
