@@ -17,3 +17,11 @@
 2025-03-31 14:07:43 [INFO] [TERMINAL] input: exit
 2025-03-31 14:07:43 [INFO] [TERMINAL] response: [info] Exiting terminal shell (not app).
 2025-03-31 14:07:47 [INFO] [TERMINAL] input: 
+2025-03-31 15:11:42 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 15:11:42 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 15:14:56 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 15:14:56 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 15:15:19 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 15:15:19 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 15:26:27 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 15:26:27 [INFO] [SETTINGS] input_mode = hybrid

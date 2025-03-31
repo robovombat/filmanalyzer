@@ -10,3 +10,5 @@
 2025-03-31 13:17:03 [DEBUG] 🧪 TEST: This is a DEBUG message (file only)
 2025-03-31 13:17:03 [WARNING] 🧪 TEST: This is a WARNING
 2025-03-31 13:17:03 [ERROR] 🧪 TEST: This is an ERROR
+2025-03-31 14:12:58 [INFO] [TEST] Input: echo test
+2025-03-31 14:12:58 [INFO] [TEST] Output: test
