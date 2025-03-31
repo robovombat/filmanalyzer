@@ -1,11 +1,36 @@
 [
     {
-        "label": "curses",
+        "label": "logging",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "curses",
-        "description": "curses",
-        "detail": "curses",
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "Console",
+        "importPath": "rich.console",
+        "description": "rich.console",
+        "isExtraImport": true,
+        "detail": "rich.console",
+        "documentation": {}
+    },
+    {
+        "label": "RichHandler",
+        "importPath": "rich.logging",
+        "description": "rich.logging",
+        "isExtraImport": true,
+        "detail": "rich.logging",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
@@ -18,6 +43,55 @@
         "documentation": {}
     },
     {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "isExtraImport": true,
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "isExtraImport": true,
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "curses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "curses",
+        "description": "curses",
+        "detail": "curses",
+        "documentation": {}
+    },
+    {
         "label": "TuiController",
         "importPath": "tui.controller",
         "description": "tui.controller",
@@ -26,11 +100,119 @@
         "documentation": {}
     },
     {
+        "label": "LOG_DIR",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "LOG_DIR = \"logs\"\nLOG_FILE = os.path.join(LOG_DIR, \"app.log\")\nos.makedirs(LOG_DIR, exist_ok=True)\nFORMAT = \"%(asctime)s [%(levelname)s] %(message)s\"\nDATEFMT = \"%Y-%m-%d %H:%M:%S\"\nconsole = Console()\nlogger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "LOG_FILE",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "LOG_FILE = os.path.join(LOG_DIR, \"app.log\")\nos.makedirs(LOG_DIR, exist_ok=True)\nFORMAT = \"%(asctime)s [%(levelname)s] %(message)s\"\nDATEFMT = \"%Y-%m-%d %H:%M:%S\"\nconsole = Console()\nlogger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "FORMAT",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "FORMAT = \"%(asctime)s [%(levelname)s] %(message)s\"\nDATEFMT = \"%Y-%m-%d %H:%M:%S\"\nconsole = Console()\nlogger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)\nconsole_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(console_handler)",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "DATEFMT",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "DATEFMT = \"%Y-%m-%d %H:%M:%S\"\nconsole = Console()\nlogger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)\nconsole_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(console_handler)\nfile_handler = logging.FileHandler(LOG_FILE)",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "console",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "console = Console()\nlogger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)\nconsole_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(console_handler)\nfile_handler = logging.FileHandler(LOG_FILE)\nfile_handler.setLevel(logging.DEBUG)",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "logger = logging.getLogger(\"FilmAnalyzer\")\nlogger.setLevel(logging.DEBUG)\nlogger.handlers.clear()\nconsole_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)\nconsole_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(console_handler)\nfile_handler = logging.FileHandler(LOG_FILE)\nfile_handler.setLevel(logging.DEBUG)\nfile_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "console_handler",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "console_handler = RichHandler(console=console, markup=True)\nconsole_handler.setLevel(logging.INFO)\nconsole_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(console_handler)\nfile_handler = logging.FileHandler(LOG_FILE)\nfile_handler.setLevel(logging.DEBUG)\nfile_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(file_handler)\nlog = logger",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "file_handler",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "file_handler = logging.FileHandler(LOG_FILE)\nfile_handler.setLevel(logging.DEBUG)\nfile_handler.setFormatter(logging.Formatter(FORMAT, datefmt=DATEFMT))\nlogger.addHandler(file_handler)\nlog = logger",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "kind": 5,
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "peekOfCode": "log = logger",
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "kind": 2,
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "peekOfCode": "def read_last_lines(filepath, num_lines=10):\n    if not os.path.exists(filepath):\n        return [\"[LOG] File not found.\"]\n    with open(filepath, \"r\", encoding=\"utf-8\", errors=\"ignore\") as file:\n        lines = file.readlines()\n        return lines[-num_lines:] if lines else [\"[LOG] No entries found.\"]",
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "test_logging_system",
+        "kind": 2,
+        "importPath": "tests.test_logger",
+        "description": "tests.test_logger",
+        "peekOfCode": "def test_logging_system():\n    log.info(\"🧪 TEST: This is an INFO message\")\n    log.debug(\"🧪 TEST: This is a DEBUG message (file only)\")\n    log.warning(\"🧪 TEST: This is a WARNING\")\n    log.error(\"🧪 TEST: This is an ERROR\")\nif __name__ == \"__main__\":\n    test_logging_system()\n    print(\"\\n✅ Log test complete. Check logs/app.log\")",
+        "detail": "tests.test_logger",
+        "documentation": {}
+    },
+    {
+        "label": "test_log_reading",
+        "kind": 2,
+        "importPath": "tests.test_log_viewer",
+        "description": "tests.test_log_viewer",
+        "peekOfCode": "def test_log_reading():\n    path = \"logs/app.log\"\n    if not os.path.exists(path):\n        print(\"[WARN] Log file doesn't exist.\")\n        return\n    lines = read_last_lines(path, 5)\n    print(\"Last 5 log lines:\")\n    for line in lines:\n        print(\"  \" + line.strip())\nif __name__ == \"__main__\":",
+        "detail": "tests.test_log_viewer",
+        "documentation": {}
+    },
+    {
         "label": "TuiController",
         "kind": 6,
         "importPath": "tui.controller",
         "description": "tui.controller",
-        "peekOfCode": "class TuiController:\n    \"\"\"\n    Main TUI Controller handles:\n    - Key input\n    - Tab rendering\n    - App lifecycle\n    \"\"\"\n    def __init__(self, stdscr):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]",
+        "peekOfCode": "class TuiController:\n    \"\"\"\n    Main TUI controller class.\n    Handles rendering views, switching tabs, logging, and user input.\n    \"\"\"\n    def __init__(self, stdscr):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")",
         "detail": "tui.controller",
         "documentation": {}
     },
@@ -39,7 +221,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main(stdscr):\n    controller = TuiController(stdscr)\n    controller.run()\nif __name__ == \"__main__\":\n    curses.wrapper(main)",
+        "peekOfCode": "def main(stdscr):\n    log.info(\"🔁 App Starting\")\n    controller = TuiController(stdscr)\n    controller.run()\n    log.info(\"✅ App Exited Successfully\")\nif __name__ == \"__main__\":\n    curses.wrapper(main)",
         "detail": "main",
         "documentation": {}
     }

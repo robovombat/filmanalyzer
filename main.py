@@ -1,6 +1,5 @@
 
 import sys
-
 try:
     import curses
 except ImportError:
@@ -10,12 +9,13 @@ except ImportError:
         raise
 
 from tui.controller import TuiController
-
+from log.logger import log
 
 def main(stdscr):
+    log.info("🔁 App Starting")
     controller = TuiController(stdscr)
     controller.run()
-
+    log.info("✅ App Exited Successfully")
 
 if __name__ == "__main__":
     curses.wrapper(main)

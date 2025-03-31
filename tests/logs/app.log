@@ -1,0 +1,12 @@
+2025-03-30 21:57:35 [INFO] 🧪 TEST: This is an INFO message
+2025-03-30 21:57:35 [DEBUG] 🧪 TEST: This is a DEBUG message (file only)
+2025-03-30 21:57:35 [WARNING] 🧪 TEST: This is a WARNING
+2025-03-30 21:57:35 [ERROR] 🧪 TEST: This is an ERROR
+2025-03-31 13:16:28 [INFO] 🧪 TEST: This is an INFO message
+2025-03-31 13:16:28 [DEBUG] 🧪 TEST: This is a DEBUG message (file only)
+2025-03-31 13:16:28 [WARNING] 🧪 TEST: This is a WARNING
+2025-03-31 13:16:28 [ERROR] 🧪 TEST: This is an ERROR
+2025-03-31 13:17:03 [INFO] 🧪 TEST: This is an INFO message
+2025-03-31 13:17:03 [DEBUG] 🧪 TEST: This is a DEBUG message (file only)
+2025-03-31 13:17:03 [WARNING] 🧪 TEST: This is a WARNING
+2025-03-31 13:17:03 [ERROR] 🧪 TEST: This is an ERROR
