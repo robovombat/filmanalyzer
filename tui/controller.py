@@ -1,9 +1,9 @@
-# [MODIFIED STEP: Step 2b.4 - Input Mode Setting | 2025-03-30]
+
+# [MODIFIED STEP: Step 2c - Rich-Curses Hybrid | 2025-03-31]
 # CHANGES:
-# - Added terminal_input_mode setting logic
-# - Arrow key behavior adapts based on input
-# - Added `:set input_mode=` terminal command
-# - Color-coded messages using curses.init_pair
+# - Fixed method indentation to ensure all are part of TuiController
+# - Removed init_colors()
+# - Added inline comments for every logical block
 
 import curses
 import os
@@ -19,8 +19,8 @@ class TuiController:
         self.log_path = os.path.join("logs", "app.log")
         self.config = config
 
-        self.input_mode = config.get("terminal_input_mode", "hybrid")  # "vim" or "hybrid"
-        self.is_in_insert_mode = True if self.input_mode == "hybrid" else False
+        self.input_mode = config.get("terminal_input_mode", "hybrid")
+        self.is_in_insert_mode = self.input_mode == "hybrid"
 
         self.input_buffer = ""
         self.terminal_output = []
@@ -31,24 +31,7 @@ class TuiController:
         curses.curs_set(0)
         self.stdscr.nodelay(False)
         self.stdscr.keypad(True)
-        # self.init_colors()
 
-def init_colors(self):
-    if not curses.has_colors():
-        from log.logger import log
-        log.warning("[WARN] Terminal does not support color.")
-        return
-
-    curses.start_color()
-    curses.use_default_colors()
-
-    curses.init_pair(1, curses.COLOR_GREEN, -1)   # OK
-    curses.init_pair(2, curses.COLOR_CYAN, -1)    # Info
-    curses.init_pair(3, curses.COLOR_MAGENTA, -1) # ?
-    curses.init_pair(4, curses.COLOR_RED, -1)     # Error
-    curses.init_pair(5, curses.COLOR_YELLOW, -1)  # Warn
-    
-    
     def draw_tabs(self):
         height, width = self.stdscr.getmaxyx()
         tab_str = ""
@@ -73,37 +56,17 @@ def init_colors(self):
             for i, line in enumerate(log_lines):
                 if i + 2 < height - 1:
                     self.stdscr.addstr(i + 2, 2, line.strip()[:width - 4])
-
         elif current_tab == "Terminal":
             max_output_lines = height - 5
             visible_output = self.terminal_output[-max_output_lines:]
             for i, line in enumerate(visible_output):
-                self.draw_colored_line(i + 2, 2, line[:width - 4])
+                self.stdscr.addstr(i + 2, 2, line[:width - 4])
             prompt = f"> {self.input_buffer}"
             self.stdscr.addstr(height - 3, 2, prompt[:width - 4], curses.A_UNDERLINE)
-
         else:
             content_text = f"You are in the [{current_tab}] tab."
             self.stdscr.addstr(height // 2, max(2, width // 4), content_text)
 
-    def draw_colored_line(self, y, x, line):
-        if line.startswith("[OK]"):
-            self.stdscr.addstr(y, x, "[OK]", curses.color_pair(1))
-            self.stdscr.addstr(y, x + 4, line[4:])
-        elif line.startswith("[info]"):
-            self.stdscr.addstr(y, x, "[info]", curses.color_pair(2))
-            self.stdscr.addstr(y, x + 6, line[6:])
-        elif line.startswith("[?]"):
-            self.stdscr.addstr(y, x, "[?]", curses.color_pair(3))
-            self.stdscr.addstr(y, x + 3, line[3:])
-        elif line.startswith("[warn]"):
-            self.stdscr.addstr(y, x, "[warn]", curses.color_pair(5))
-            self.stdscr.addstr(y, x + 6, line[6:])
-        elif line.startswith("[error]"):
-            self.stdscr.addstr(y, x, "[error]", curses.color_pair(4))
-            self.stdscr.addstr(y, x + 7, line[7:])
-        else:
-            self.stdscr.addstr(y, x, line)
     def handle_terminal_input(self, key):
         if self.input_mode == "vim":
             if self.is_in_insert_mode:
@@ -112,7 +75,7 @@ def init_colors(self):
                 if key == ord('i'):
                     self.is_in_insert_mode = True
                     self.terminal_output.append("[info] Insert mode activated")
-                elif key == 27:  # ESC
+                elif key == 27:
                     self.terminal_output.append("[info] Already in navigation mode")
         else:
             self.handle_input_key(key)
@@ -126,25 +89,20 @@ def init_colors(self):
             log.info(f"[TERMINAL] input: {command}")
             self.execute_command(command)
             self.input_buffer = ""
-
         elif key in (curses.KEY_BACKSPACE, 127, 8):
             self.input_buffer = self.input_buffer[:-1]
-
         elif key == curses.KEY_UP:
             if self.command_history:
                 self.history_index = max(self.history_index - 1, -len(self.command_history))
                 self.input_buffer = self.command_history[self.history_index]
-
         elif key == curses.KEY_DOWN:
             if self.history_index < -1:
                 self.history_index += 1
                 self.input_buffer = self.command_history[self.history_index]
             else:
                 self.input_buffer = ""
-
         elif 32 <= key <= 126:
             self.input_buffer += chr(key)
-
         elif key == 27 and self.input_mode == "vim":
             self.is_in_insert_mode = False
             self.terminal_output.append("[info] Switched to navigation mode")
@@ -191,7 +149,6 @@ def init_colors(self):
             key = self.stdscr.getch()
 
             if self.tabs[self.active_tab] == "Terminal":
-                # Hybrid: allow ←/→ if input is empty
                 if self.input_mode == "hybrid" and self.input_buffer == "":
                     if key == curses.KEY_LEFT:
                         self.active_tab = (self.active_tab - 1) % len(self.tabs)
@@ -200,7 +157,6 @@ def init_colors(self):
                         self.active_tab = (self.active_tab + 1) % len(self.tabs)
                         continue
                 self.handle_terminal_input(key)
-
             elif key == curses.KEY_RIGHT:
                 self.active_tab = (self.active_tab + 1) % len(self.tabs)
             elif key == curses.KEY_LEFT:

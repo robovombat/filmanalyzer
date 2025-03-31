@@ -281,16 +281,7 @@
         "kind": 6,
         "importPath": "tui.controller",
         "description": "tui.controller",
-        "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")  # \"vim\" or \"hybrid\"\n        self.is_in_insert_mode = True if self.input_mode == \"hybrid\" else False\n        self.input_buffer = \"\"",
-        "detail": "tui.controller",
-        "documentation": {}
-    },
-    {
-        "label": "init_colors",
-        "kind": 2,
-        "importPath": "tui.controller",
-        "description": "tui.controller",
-        "peekOfCode": "def init_colors(self):\n    if not curses.has_colors():\n        from log.logger import log\n        log.warning(\"[WARN] Terminal does not support color.\")\n        return\n    curses.start_color()\n    curses.use_default_colors()\n    curses.init_pair(1, curses.COLOR_GREEN, -1)   # OK\n    curses.init_pair(2, curses.COLOR_CYAN, -1)    # Info\n    curses.init_pair(3, curses.COLOR_MAGENTA, -1) # ?",
+        "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")\n        self.is_in_insert_mode = self.input_mode == \"hybrid\"\n        self.input_buffer = \"\"",
         "detail": "tui.controller",
         "documentation": {}
     },

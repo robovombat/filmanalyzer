@@ -27,3 +27,14 @@
 2025-03-31 15:26:27 [INFO] [SETTINGS] input_mode = hybrid
 2025-03-31 15:41:54 [INFO] [SETTINGS] Loaded from config/config.yaml
 2025-03-31 15:41:54 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 15:45:45 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 15:45:45 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 16:45:29 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 16:45:29 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 16:45:37 [INFO] [TERMINAL] input: 
+2025-03-31 16:45:39 [INFO] [TERMINAL] input: jgkmhgjmkjkh
+2025-03-31 16:45:39 [INFO] [TERMINAL] response: [?] Unknown command: jgkmhgjmkjkh
+2025-03-31 16:46:31 [INFO] [SETTINGS] Loaded from config/config.yaml
+2025-03-31 16:46:31 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 16:46:45 [INFO] [TERMINAL] input: help
+2025-03-31 16:46:45 [INFO] [TERMINAL] response: [OK] Commands: help, echo <text>, clear, exit, :set input_mode=...
