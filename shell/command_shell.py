@@ -1,9 +1,8 @@
-# [ADDED STEP: Step 2d - Modular Command Shell Integration | 2025-03-31]
+# [MODIFIED STEP: Step 2d - Input Sanitizer Added | 2025-03-31 19:04]
 # LOCATION: shell/command_shell.py
 # CHANGES:
-# - Modular terminal shell command processor
-# - Integrated module calling
-# - History, settings handling, help system
+# - Added optional leading ">" stripper for commands
+# - Allows > load file.mp4 as valid input
 
 import curses
 from functools import partial
@@ -65,8 +64,14 @@ class CommandShell:
     def _execute_command(self) -> str:
         """🧠 Execute a parsed terminal command"""
         cmd_str = ''.join(self.current_input).strip()
+
+        # ✅ Sanitize accidental prompt-style ">"
+        if cmd_str.startswith(">"):
+            cmd_str = cmd_str[1:].lstrip()
+
         if not cmd_str:
             return ""
+
         self.history.append(cmd_str)
         self.history_index = -1
         self.current_input = []
@@ -111,3 +116,14 @@ class CommandShell:
 
     def _exit_program(self):
         raise SystemExit("User exited.")
+    
+    def run_text_command(self, raw_input: str) -> str:
+        """🧪 Allows controller to run full line of command (no key input)"""
+        self.current_input = list(raw_input.strip())
+        return self._execute_command()
+
+# [ADDED] Public command execution from TUI text buffer
+    def run_text_command(self, command: str) -> str:
+        """⚡ Execute a command string (from TUI input)"""
+        self.current_input = list(command)
+        return self._execute_command()

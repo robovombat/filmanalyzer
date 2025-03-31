@@ -34,6 +34,14 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "yaml",
         "kind": 6,
         "isExtraImport": true,
@@ -157,6 +165,14 @@
         "documentation": {}
     },
     {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
         "label": "save_config",
         "importPath": "settings.loader",
         "description": "settings.loader",
@@ -170,6 +186,30 @@
         "description": "settings.loader",
         "isExtraImport": true,
         "detail": "settings.loader",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "VideoAnalyzer",
+        "importPath": "modules.analyzer",
+        "description": "modules.analyzer",
+        "isExtraImport": true,
+        "detail": "modules.analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigManager",
+        "importPath": "modules.settings",
+        "description": "modules.settings",
+        "isExtraImport": true,
+        "detail": "modules.settings",
         "documentation": {}
     },
     {
@@ -260,6 +300,33 @@
         "description": "log.viewer",
         "peekOfCode": "def read_last_lines(filepath, num_lines=10):\n    if not os.path.exists(filepath):\n        return [\"[LOG] File not found.\"]\n    with open(filepath, \"r\", encoding=\"utf-8\", errors=\"ignore\") as file:\n        lines = file.readlines()\n        return lines[-num_lines:] if lines else [\"[LOG] No entries found.\"]",
         "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "VideoAnalyzer",
+        "kind": 6,
+        "importPath": "modules.analyzer",
+        "description": "modules.analyzer",
+        "peekOfCode": "class VideoAnalyzer:\n    \"\"\"🔍 Dummy Analyzer for testing CLI integration\"\"\"\n    def start_analysis(self, *args) -> str:\n        \"\"\"▶️ Pretend to start analysis\"\"\"\n        params = self._parse_args(args)\n        return f\"Analysis started with {params}\"\n    def pause_analysis(self) -> str:\n        \"\"\"⏸️ Pretend to pause\"\"\"\n        return \"Analysis paused\"\n    def _parse_args(self, args: tuple) -> dict:",
+        "detail": "modules.analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "kind": 6,
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "peekOfCode": "class MediaImporter:\n    \"\"\"📁 Handle media file imports and validation\"\"\"\n    SUPPORTED_FORMATS = ['.mp4', '.mkv', '.mov', '.avi']\n    def load_media(self, file_path: str) -> str:\n        \"\"\"📥 Load a media file from disk\"\"\"\n        path = Path(file_path)\n        # Check file exists\n        if not path.exists():\n            raise FileNotFoundError(f\"[error] Path not found: {file_path}\")\n        # Check extension",
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigManager",
+        "kind": 6,
+        "importPath": "modules.settings",
+        "description": "modules.settings",
+        "peekOfCode": "class ConfigManager:\n    \"\"\"⚙️ Runtime configuration manager for TUI + shell\"\"\"\n    def __init__(self):\n        self.config = {\n            \"analysis_fps\": 1.0,\n            \"export_format\": \"json\",\n            \"log_level\": \"info\"\n        }\n    def set(self, key: str, value: str) -> str:\n        if key not in self.config:",
+        "detail": "modules.settings",
         "documentation": {}
     },
     {
@@ -366,7 +433,7 @@
         "kind": 6,
         "importPath": "tui.controller",
         "description": "tui.controller",
-        "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")\n        self.is_in_insert_mode = self.input_mode == \"hybrid\"\n        self.input_buffer = \"\"",
+        "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        # █ UI + State\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        # █ Mode Setup\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")",
         "detail": "tui.controller",
         "documentation": {}
     },

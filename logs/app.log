@@ -41,3 +41,25 @@
 2025-03-31 18:31:30 [INFO] [TERMINAL] input: 
 2025-03-31 18:31:31 [INFO] [TERMINAL] input: help
 2025-03-31 18:31:31 [INFO] [TERMINAL] response: [OK] Commands: help, echo <text>, clear, exit, :set input_mode=...
+2025-03-31 18:53:54 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 18:53:56 [INFO] [TERMINAL] input: > load assets/test.mp4
+2025-03-31 18:53:56 [INFO] [TERMINAL] response: [?] Unknown command: > load assets/test.mp4
+2025-03-31 18:56:21 [INFO] [TERMINAL] input: load assets/test.mp4
+2025-03-31 18:56:21 [INFO] [TERMINAL] response: [?] Unknown command: load assets/test.mp4
+2025-03-31 18:57:15 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 18:57:29 [INFO] [TERMINAL] input: load assets/test.mp4
+2025-03-31 18:57:29 [INFO] [TERMINAL] response: [?] Unknown command: load assets/test.mp4
+2025-03-31 19:11:31 [INFO] [TERMINAL] input: load assets/test.mp4
+2025-03-31 19:11:31 [INFO] [TERMINAL] response: [?] Unknown command: load assets/test.mp4
+2025-03-31 19:11:49 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 19:12:05 [INFO] [TERMINAL] input: load assets/test.mp4
+2025-03-31 19:12:05 [INFO] [TERMINAL] response: [?] Unknown command: load assets/test.mp4
+2025-03-31 19:15:32 [INFO] [TERMINAL] input: 
+2025-03-31 19:15:33 [INFO] [TERMINAL] input: help
+2025-03-31 19:15:33 [INFO] [TERMINAL] response: [OK] Commands: help, echo <text>, clear, exit, :set input_mode=...
+2025-03-31 19:23:07 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 19:23:09 [INFO] [TERMINAL] input: load modules/importer.py
+2025-03-31 19:23:09 [INFO] [TERMINAL] response: [?] Unknown command: load modules/importer.py
+2025-03-31 22:18:26 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 22:20:26 [INFO] [SETTINGS] input_mode = hybrid
+2025-03-31 22:20:38 [INFO] [TERMINAL] response: [OK] Set analysis_fps to 2.5
