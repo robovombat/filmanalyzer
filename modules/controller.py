@@ -78,6 +78,16 @@ class TuiController:
                 if i + 2 < height - 1:
                     self.stdscr.addstr(i + 2, 2, line.strip()[:width - 4])
 
+    def draw_content(self):
+        height, width = self.stdscr.getmaxyx()
+        current_tab = self.tabs[self.active_tab]
+
+        if current_tab == "Log":
+            log_lines = read_last_lines(self.log_path, num_lines=height - 4)
+            for i, line in enumerate(log_lines):
+                if i + 2 < height - 1:
+                    self.stdscr.addstr(i + 2, 2, line.strip()[:width - 4])
+
         elif current_tab == "Terminal":
             max_output_lines = height - 5
             visible_output = self.terminal_output[-max_output_lines:]
@@ -85,9 +95,18 @@ class TuiController:
             # 🔹 Display output lines with optional coloring
             for i, line in enumerate(visible_output):
                 self.draw_colored_line(i + 2, 2, line[:width - 4])
+            # ── 🧪 Detect extract summary and display "done" bar
+            if any("Extracted" in line for line in self.terminal_output[-5:]):
+                percent = 100
+                eta = 0
+                bar = f"[{'█' * (percent // 10)}{'░' * (10 - percent // 10)}] {percent}% (ETA: {eta}s)"
+                self.stdscr.addstr(height - 4, 2, bar[:width - 4], curses.A_BOLD)       
+                
+                prompt = f"> {self.input_buffer}"
+                self.stdscr.addstr(height - 3, 2, prompt[:width - 4], curses.A_UNDERLINE)
 
             # 🔍 Extract progress preview stub (based on terminal output)
-            if any("Extracted" in line for line in visible_output[-3:]):
+            if any("Extracted" in line for line in self.terminal_output[-5:]):
                 bar = f"[{'█' * percent // 10}{'░' * (10 - percent // 10)}] {percent}% (ETA: {eta}s)"
 
                 self.stdscr.addstr(height - 4, 2, bar[:width - 4], curses.A_BOLD)
@@ -95,6 +114,12 @@ class TuiController:
             # ⌨️ Prompt line
             prompt = f"> {self.input_buffer}"
             self.stdscr.addstr(height - 3, 2, prompt[:width - 4], curses.A_UNDERLINE)
+
+        else:
+            content_text = f"You are in the [{current_tab}] tab."
+            self.stdscr.addstr(height // 2, max(2, width // 4), content_text)
+
+
 
         else:
             content_text = f"You are in the [{current_tab}] tab."

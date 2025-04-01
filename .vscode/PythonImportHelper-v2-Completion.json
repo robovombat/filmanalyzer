@@ -139,6 +139,14 @@
         "documentation": {}
     },
     {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
         "label": "save_config",
         "importPath": "settings.loader",
         "description": "settings.loader",
@@ -233,6 +241,14 @@
         "importPath": "cv2",
         "description": "cv2",
         "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "time",
+        "description": "time",
+        "isExtraImport": true,
+        "detail": "time",
         "documentation": {}
     },
     {
@@ -406,7 +422,7 @@
         "kind": 6,
         "importPath": "modules.importer",
         "description": "modules.importer",
-        "peekOfCode": "class MediaImporter:\n    \"\"\"📁 Handle media file imports and frame extraction\"\"\"\n    SUPPORTED_FORMATS = ['.mp4', '.mkv', '.mov', '.avi']\n    def __init__(self):\n        self.video_path: Path = None\n        self.loaded_name = \"\"\n    def load_media(self, file_path: str) -> str:\n        \"\"\"📥 Load and validate media file\"\"\"\n        path = Path(file_path)\n        if not path.exists():",
+        "peekOfCode": "class MediaImporter:\n    \"\"\"📁 Handle media file imports and validation\"\"\"\n    SUPPORTED_FORMATS = ['.mp4', '.mkv', '.mov', '.avi']\n    def __init__(self):\n        self.last_loaded_path = None\n    def load_media(self, file_path: str) -> str:\n        \"\"\"📥 Load and validate a video file\"\"\"\n        path = Path(file_path)\n        if not path.exists():\n            raise FileNotFoundError(f\"Path {file_path} not found\")",
         "detail": "modules.importer",
         "documentation": {}
     },
@@ -451,7 +467,7 @@
         "kind": 6,
         "importPath": "shell.command_shell",
         "description": "shell.command_shell",
-        "peekOfCode": "class CommandShell:\n    \"\"\"🔧 Terminal command interface with history and module integration\"\"\"\n    def __init__(self, modules: Dict[str, object]):\n        self.history: List[str] = []\n        self.history_index: int = -1\n        self.current_input: List[str] = []\n        self.modules = modules\n        self.command_registry = self._build_command_registry()\n        self.autocomplete_options: List[str] = []\n        self.autocomplete_index: int = 0",
+        "peekOfCode": "class CommandShell:\n    \"\"\"🔧 Terminal command interface with history and module integration\"\"\"\n    def __init__(self, modules: Dict[str, object]):\n        # 🧠 CLI state\n        self.history: List[str] = []\n        self.history_index: int = -1\n        self.current_input: List[str] = []\n        # 🔌 External module references\n        self.modules = modules\n        # 📦 Terminal display (shared with TUI controller)",
         "detail": "shell.command_shell",
         "documentation": {}
     },

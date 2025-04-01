@@ -82,3 +82,14 @@
 2025-04-01 18:18:26 [INFO] [SETTINGS] input_mode = hybrid
 2025-04-01 18:18:46 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
 2025-04-01 18:18:51 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test
+2025-04-01 18:28:07 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 18:28:17 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 18:28:21 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test
+2025-04-01 19:28:04 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 19:28:58 [INFO] [IMPORT] Media loaded: test.mp4
+2025-04-01 19:28:58 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 19:29:03 [INFO] [IMPORT] Extracted 45 frames to tmp_frames\test
+2025-04-01 19:29:03 [INFO] [TERMINAL] response: [OK] Extracted 45 frames at 2.0 fps → tmp_frames\test
+2025-04-01 19:30:46 [INFO] [TERMINAL] response: [?] Unknown command: xtract
+2025-04-01 19:31:07 [INFO] [IMPORT] Extracted 21 frames to tmp_frames\test
+2025-04-01 19:31:07 [INFO] [TERMINAL] response: [OK] Extracted 21 frames at 1.0 fps → tmp_frames\test
