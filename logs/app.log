@@ -69,3 +69,7 @@
 2025-04-01 15:05:09 [INFO] [SETTINGS] input_mode = hybrid
 2025-04-01 15:05:24 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
 2025-04-01 15:05:32 [INFO] [TERMINAL] response: [?] Unknown command: extract
+2025-04-01 16:48:18 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 17:07:31 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 17:07:37 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 17:07:43 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test

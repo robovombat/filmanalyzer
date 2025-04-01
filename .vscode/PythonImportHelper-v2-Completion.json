@@ -182,6 +182,30 @@
         "documentation": {}
     },
     {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
         "label": "save_config",
         "importPath": "settings.loader",
         "description": "settings.loader",
@@ -195,14 +219,6 @@
         "description": "settings.loader",
         "isExtraImport": true,
         "detail": "settings.loader",
-        "documentation": {}
-    },
-    {
-        "label": "MediaImporter",
-        "importPath": "modules.importer",
-        "description": "modules.importer",
-        "isExtraImport": true,
-        "detail": "modules.importer",
         "documentation": {}
     },
     {
@@ -370,7 +386,7 @@
         "kind": 6,
         "importPath": "shell.command_shell",
         "description": "shell.command_shell",
-        "peekOfCode": "class CommandShell:\n    \"\"\"🔧 Terminal command interface with history and module integration\"\"\"\n    def __init__(self, modules: Dict[str, object]):\n        # █ History\n        self.history: List[str] = []\n        self.history_index: int = -1\n        self.current_input: List[str] = []\n        # █ Injected modules\n        self.modules = modules\n        # █ Command definitions",
+        "peekOfCode": "class CommandShell:\n    \"\"\"🔧 Terminal command interface with history and module integration\"\"\"\n    def __init__(self, modules: Dict[str, object]):\n        self.history: List[str] = []\n        self.history_index: int = -1\n        self.current_input: List[str] = []\n        self.modules = modules\n        self.command_registry = self._build_command_registry()\n        self.autocomplete_options: List[str] = []\n        self.autocomplete_index: int = 0",
         "detail": "shell.command_shell",
         "documentation": {}
     },
@@ -426,6 +442,15 @@
         "description": "tests.test_shell",
         "peekOfCode": "def run_test():\n    shell = CommandShell({\n        'importer': MockImporter(),\n        'analyzer': MockAnalyzer(),\n        'settings': MockSettings(),\n    })\n    # Simulate user commands\n    commands = [\n        \"help\",\n        \"load film.mp4\",",
         "detail": "tests.test_shell",
+        "documentation": {}
+    },
+    {
+        "label": "run_test",
+        "kind": 2,
+        "importPath": "tests.test_shell_extract",
+        "description": "tests.test_shell_extract",
+        "peekOfCode": "def run_test():\n    importer = MediaImporter()\n    importer.load_media(\"assets/test.mp4\")\n    shell = CommandShell({'importer': importer})\n    result = shell.run_text_command(\"extract -fps=2.0\")\n    print(\"[TEST] Shell Extract Output:\", result)",
+        "detail": "tests.test_shell_extract",
         "documentation": {}
     },
     {
