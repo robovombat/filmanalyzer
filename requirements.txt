@@ -1,0 +1,6 @@
+opencv-python
+numpy
+pandas
+plotly
+rich
+terminal-text-effects

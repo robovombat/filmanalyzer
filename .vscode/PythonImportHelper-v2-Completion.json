@@ -25,6 +25,14 @@
         "documentation": {}
     },
     {
+        "label": "Console",
+        "importPath": "rich.console",
+        "description": "rich.console",
+        "isExtraImport": true,
+        "detail": "rich.console",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -310,6 +318,39 @@
         "documentation": {}
     },
     {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "Panel",
+        "importPath": "rich.panel",
+        "description": "rich.panel",
+        "isExtraImport": true,
+        "detail": "rich.panel",
+        "documentation": {}
+    },
+    {
+        "label": "install",
+        "importPath": "rich.traceback",
+        "description": "rich.traceback",
+        "isExtraImport": true,
+        "detail": "rich.traceback",
+        "documentation": {}
+    },
+    {
+        "label": "find_spec",
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "isExtraImport": true,
+        "detail": "importlib.util",
+        "documentation": {}
+    },
+    {
         "label": "LOG_DIR",
         "kind": 5,
         "importPath": "log.logger",
@@ -550,6 +591,42 @@
         "description": "tui.controller",
         "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        # █ UI + State\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        # █ Mode Setup\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")",
         "detail": "tui.controller",
+        "documentation": {}
+    },
+    {
+        "label": "get_required_packages",
+        "kind": 2,
+        "importPath": "check_env",
+        "description": "check_env",
+        "peekOfCode": "def get_required_packages(path=\"requirements.txt\") -> list:\n    with open(path, \"r\") as f:\n        return [line.strip() for line in f if line.strip() and not line.startswith(\"#\")]\ndef check_and_install(package: str):\n    import_name = package.split(\"==\")[0].replace(\"-\", \"_\")\n    if find_spec(import_name) is None:\n        console.print(f\"⚠️ [yellow]'{package}' not found → installing...[/yellow]\")\n        try:\n            proc = subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", package],",
+        "detail": "check_env",
+        "documentation": {}
+    },
+    {
+        "label": "check_and_install",
+        "kind": 2,
+        "importPath": "check_env",
+        "description": "check_env",
+        "peekOfCode": "def check_and_install(package: str):\n    import_name = package.split(\"==\")[0].replace(\"-\", \"_\")\n    if find_spec(import_name) is None:\n        console.print(f\"⚠️ [yellow]'{package}' not found → installing...[/yellow]\")\n        try:\n            proc = subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", package],\n                check=True,\n                text=True\n            )",
+        "detail": "check_env",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "check_env",
+        "description": "check_env",
+        "peekOfCode": "def main():\n    console.print(Panel(\"🔍 [bold cyan]Checking Project Dependencies...[/bold cyan]\", expand=False))\n    try:\n        packages = get_required_packages()\n    except FileNotFoundError:\n        console.print(\"[red]❌ requirements.txt not found![/red]\")\n        sys.exit(1)\n    for package in packages:\n        check_and_install(package)\n    console.print(\"\\n🎉 [bold green]All dependencies satisfied! You're ready to go![/bold green]\")",
+        "detail": "check_env",
+        "documentation": {}
+    },
+    {
+        "label": "console",
+        "kind": 5,
+        "importPath": "check_env",
+        "description": "check_env",
+        "peekOfCode": "console = Console()\ndef get_required_packages(path=\"requirements.txt\") -> list:\n    with open(path, \"r\") as f:\n        return [line.strip() for line in f if line.strip() and not line.startswith(\"#\")]\ndef check_and_install(package: str):\n    import_name = package.split(\"==\")[0].replace(\"-\", \"_\")\n    if find_spec(import_name) is None:\n        console.print(f\"⚠️ [yellow]'{package}' not found → installing...[/yellow]\")\n        try:\n            proc = subprocess.run(",
+        "detail": "check_env",
         "documentation": {}
     },
     {
