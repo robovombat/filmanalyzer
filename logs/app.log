@@ -73,3 +73,12 @@
 2025-04-01 17:07:31 [INFO] [SETTINGS] input_mode = hybrid
 2025-04-01 17:07:37 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
 2025-04-01 17:07:43 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test
+2025-04-01 17:54:01 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 18:16:46 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 18:17:35 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 18:17:41 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test
+2025-04-01 18:18:12 [INFO] [TERMINAL] response: [?] Unknown command: q
+2025-04-01 18:18:14 [INFO] [TERMINAL] response: [?] Unknown command: q
+2025-04-01 18:18:26 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 18:18:46 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 18:18:51 [INFO] [TERMINAL] response: [OK] Extracted 42 frames at 2.0 fps → tmp_frames\test

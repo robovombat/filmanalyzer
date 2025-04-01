@@ -34,6 +34,191 @@
         "documentation": {}
     },
     {
+        "label": "curses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "curses",
+        "description": "curses",
+        "detail": "curses",
+        "documentation": {}
+    },
+    {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
+        "label": "CommandShell",
+        "importPath": "shell.command_shell",
+        "description": "shell.command_shell",
+        "isExtraImport": true,
+        "detail": "shell.command_shell",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "isExtraImport": true,
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "isExtraImport": true,
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "read_last_lines",
+        "importPath": "log.viewer",
+        "description": "log.viewer",
+        "isExtraImport": true,
+        "detail": "log.viewer",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log",
+        "importPath": "log.logger",
+        "description": "log.logger",
+        "isExtraImport": true,
+        "detail": "log.logger",
+        "documentation": {}
+    },
+    {
+        "label": "save_config",
+        "importPath": "settings.loader",
+        "description": "settings.loader",
+        "isExtraImport": true,
+        "detail": "settings.loader",
+        "documentation": {}
+    },
+    {
+        "label": "save_config",
+        "importPath": "settings.loader",
+        "description": "settings.loader",
+        "isExtraImport": true,
+        "detail": "settings.loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "importPath": "settings.loader",
+        "description": "settings.loader",
+        "isExtraImport": true,
+        "detail": "settings.loader",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "MediaImporter",
+        "importPath": "modules.importer",
+        "description": "modules.importer",
+        "isExtraImport": true,
+        "detail": "modules.importer",
+        "documentation": {}
+    },
+    {
+        "label": "VideoAnalyzer",
+        "importPath": "modules.analyzer",
+        "description": "modules.analyzer",
+        "isExtraImport": true,
+        "detail": "modules.analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "VideoAnalyzer",
+        "importPath": "modules.analyzer",
+        "description": "modules.analyzer",
+        "isExtraImport": true,
+        "detail": "modules.analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigManager",
+        "importPath": "modules.settings",
+        "description": "modules.settings",
+        "isExtraImport": true,
+        "detail": "modules.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigManager",
+        "importPath": "modules.settings",
+        "description": "modules.settings",
+        "isExtraImport": true,
+        "detail": "modules.settings",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -57,15 +242,6 @@
         "importPath": "yaml",
         "description": "yaml",
         "detail": "yaml",
-        "documentation": {}
-    },
-    {
-        "label": "curses",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "curses",
-        "description": "curses",
-        "detail": "curses",
         "documentation": {}
     },
     {
@@ -115,126 +291,6 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "log",
-        "importPath": "log.logger",
-        "description": "log.logger",
-        "isExtraImport": true,
-        "detail": "log.logger",
-        "documentation": {}
-    },
-    {
-        "label": "log",
-        "importPath": "log.logger",
-        "description": "log.logger",
-        "isExtraImport": true,
-        "detail": "log.logger",
-        "documentation": {}
-    },
-    {
-        "label": "log",
-        "importPath": "log.logger",
-        "description": "log.logger",
-        "isExtraImport": true,
-        "detail": "log.logger",
-        "documentation": {}
-    },
-    {
-        "label": "log",
-        "importPath": "log.logger",
-        "description": "log.logger",
-        "isExtraImport": true,
-        "detail": "log.logger",
-        "documentation": {}
-    },
-    {
-        "label": "read_last_lines",
-        "importPath": "log.viewer",
-        "description": "log.viewer",
-        "isExtraImport": true,
-        "detail": "log.viewer",
-        "documentation": {}
-    },
-    {
-        "label": "read_last_lines",
-        "importPath": "log.viewer",
-        "description": "log.viewer",
-        "isExtraImport": true,
-        "detail": "log.viewer",
-        "documentation": {}
-    },
-    {
-        "label": "CommandShell",
-        "importPath": "shell.command_shell",
-        "description": "shell.command_shell",
-        "isExtraImport": true,
-        "detail": "shell.command_shell",
-        "documentation": {}
-    },
-    {
-        "label": "CommandShell",
-        "importPath": "shell.command_shell",
-        "description": "shell.command_shell",
-        "isExtraImport": true,
-        "detail": "shell.command_shell",
-        "documentation": {}
-    },
-    {
-        "label": "CommandShell",
-        "importPath": "shell.command_shell",
-        "description": "shell.command_shell",
-        "isExtraImport": true,
-        "detail": "shell.command_shell",
-        "documentation": {}
-    },
-    {
-        "label": "MediaImporter",
-        "importPath": "modules.importer",
-        "description": "modules.importer",
-        "isExtraImport": true,
-        "detail": "modules.importer",
-        "documentation": {}
-    },
-    {
-        "label": "MediaImporter",
-        "importPath": "modules.importer",
-        "description": "modules.importer",
-        "isExtraImport": true,
-        "detail": "modules.importer",
-        "documentation": {}
-    },
-    {
-        "label": "save_config",
-        "importPath": "settings.loader",
-        "description": "settings.loader",
-        "isExtraImport": true,
-        "detail": "settings.loader",
-        "documentation": {}
-    },
-    {
-        "label": "load_config",
-        "importPath": "settings.loader",
-        "description": "settings.loader",
-        "isExtraImport": true,
-        "detail": "settings.loader",
-        "documentation": {}
-    },
-    {
-        "label": "VideoAnalyzer",
-        "importPath": "modules.analyzer",
-        "description": "modules.analyzer",
-        "isExtraImport": true,
-        "detail": "modules.analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "ConfigManager",
-        "importPath": "modules.settings",
-        "description": "modules.settings",
-        "isExtraImport": true,
-        "detail": "modules.settings",
         "documentation": {}
     },
     {
@@ -334,6 +390,15 @@
         "description": "modules.analyzer",
         "peekOfCode": "class VideoAnalyzer:\n    \"\"\"🔍 Dummy Analyzer for testing CLI integration\"\"\"\n    def start_analysis(self, *args) -> str:\n        \"\"\"▶️ Pretend to start analysis\"\"\"\n        params = self._parse_args(args)\n        return f\"Analysis started with {params}\"\n    def pause_analysis(self) -> str:\n        \"\"\"⏸️ Pretend to pause\"\"\"\n        return \"Analysis paused\"\n    def _parse_args(self, args: tuple) -> dict:",
         "detail": "modules.analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TuiController",
+        "kind": 6,
+        "importPath": "modules.controller",
+        "description": "modules.controller",
+        "peekOfCode": "class TuiController:\n    def __init__(self, stdscr, config):\n        # █ UI + State\n        self.stdscr = stdscr\n        self.tabs = [\"Terminal\", \"Log\", \"Commands\", \"Statistics\", \"Tasks\", \"Settings ⚙\"]\n        self.active_tab = 0\n        self.log_path = os.path.join(\"logs\", \"app.log\")\n        self.config = config\n        # █ Mode Setup\n        self.input_mode = config.get(\"terminal_input_mode\", \"hybrid\")",
+        "detail": "modules.controller",
         "documentation": {}
     },
     {
