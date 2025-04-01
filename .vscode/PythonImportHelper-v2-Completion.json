@@ -42,6 +42,15 @@
         "documentation": {}
     },
     {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
         "label": "yaml",
         "kind": 6,
         "isExtraImport": true,
@@ -316,7 +325,7 @@
         "kind": 6,
         "importPath": "modules.importer",
         "description": "modules.importer",
-        "peekOfCode": "class MediaImporter:\n    \"\"\"📁 Handle media file imports and validation\"\"\"\n    SUPPORTED_FORMATS = ['.mp4', '.mkv', '.mov', '.avi']\n    def load_media(self, file_path: str) -> str:\n        \"\"\"📥 Load a media file from disk\"\"\"\n        path = Path(file_path)\n        # Check file exists\n        if not path.exists():\n            raise FileNotFoundError(f\"[error] Path not found: {file_path}\")\n        # Check extension",
+        "peekOfCode": "class MediaImporter:\n    \"\"\"📁 Handle media file imports and frame extraction\"\"\"\n    SUPPORTED_FORMATS = ['.mp4', '.mkv', '.mov', '.avi']\n    def __init__(self):\n        self.video_path: Path = None\n        self.loaded_name = \"\"\n    def load_media(self, file_path: str) -> str:\n        \"\"\"📥 Load and validate media file\"\"\"\n        path = Path(file_path)\n        if not path.exists():",
         "detail": "modules.importer",
         "documentation": {}
     },

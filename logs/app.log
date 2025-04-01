@@ -63,3 +63,9 @@
 2025-03-31 22:18:26 [INFO] [SETTINGS] input_mode = hybrid
 2025-03-31 22:20:26 [INFO] [SETTINGS] input_mode = hybrid
 2025-03-31 22:20:38 [INFO] [TERMINAL] response: [OK] Set analysis_fps to 2.5
+2025-04-01 14:44:13 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 14:44:21 [INFO] [TERMINAL] response: [error] Execution Error: Path assets/video.mp4 not found
+2025-04-01 14:48:14 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 15:05:09 [INFO] [SETTINGS] input_mode = hybrid
+2025-04-01 15:05:24 [INFO] [TERMINAL] response: [OK] Loaded test.mp4 successfully
+2025-04-01 15:05:32 [INFO] [TERMINAL] response: [?] Unknown command: extract
